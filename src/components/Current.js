@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
 
 function Current(props) {
+  
   let [filter, setFilter] = useState('');
   let [currentWeather, setCurrentWeather] = useState({cloud:'',temp:'',feels_like:'',humidity:''});
+  
   useEffect(()=>{
     async function getData() {
       let data = await props;
@@ -12,6 +14,7 @@ function Current(props) {
     };
     getData();
   }, [props])
+
   if (filter === 'current') {return(
     <div>
       <p>Now: </p>
@@ -19,7 +22,9 @@ function Current(props) {
       <div>Feels Like: {(currentWeather.feels_like-273.15).toPrecision(4)} °C</div>
     </div>
   )};
+  
   return <div></div>
+
 };
 
 export default Current;
