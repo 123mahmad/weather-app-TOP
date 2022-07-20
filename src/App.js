@@ -43,7 +43,7 @@ function App() {
   }
 
   return (
-    <div className="App">
+    <div className="app">
       <label htmlFor="searchTerm">Enter City Name: </label>
       <input type="text" id="searchTerm" onChange={handleChange} value={city}/>
       <span> </span>
